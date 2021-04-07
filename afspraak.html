@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        
+
+    </head>
+
+    <body>
+        <div>
+            <h1>DATUM</h1>
+            <input type="date" id="date" value="">
+            <input type="time" id="time">
+        </div>
+        
+        <script>
+            var date = new Date;
+            var date_day = JSON.stringify(date.getUTCDate());
+            var date_month = JSON.stringify(1 + date.getUTCMonth());
+            var date_year = date.getUTCFullYear();
+
+            if (date_day.length < 2) {
+                date_day = "0" + date_day}
+
+            if (date_month.length < 2) {
+                date_month = "0" + date_month}  
+
+            document.getElementById('date').value = date_year + "-" +date_month + "-" +date_day;
+        </script>
+
+        <br></br>
+
+        <div id="gegevens">
+            <h1>GEGEVENS</h1>
+            <label for voornaam>* Voornaam:</label>
+            <input type="text" name="voornaam"> <br></br>
+
+            <label for achternaam>* Achternaam:</label>
+            <input type="text" name="achternaam"> <br></br>
+
+            <label for telefoon>* Telefoon:</label>
+            <input type="text" name="telefoon"> <br></br>
+
+            <label for postcode>* Postcode:</label>
+            <input type="text" name="postcode"> <br></br>
+
+            <label for adress>* Adress:</label>
+            <input type="text" name="adress"> <br></br>
+
+            <label for kapsel-foto>Foto kapsel:</label> <br></br>
+            <input type="file" name="kapsel-foto"> <br></br>
+
+            <br></br>
+
+            <label for betaalmethode>betaalmethode:</label>
+            <select id="betaalmethode" name="betaalmethode">
+                <option>IDEAL</option>
+                <option>TIKKIE</option>
+                <option>PAYPAL</option>
+                <option>CONTANT</option>
+            </select>
+        </div>
+
+        <br></br>
+
+        <h3>WANNEER WILT U BETALEN:</h3>
+        <select id="betaal-moment">
+            <option>NA AFSPRAAK</option>
+            <option>NU</option>
+        </select>
+
+        <br></br>
+
+        <button>PLAN AFSPRAAK</button>
+        
+        <p style="font-style: italic;"> U kunt tot 24 uur van te voren de afspraak nog afzeggen!</p>
+        <p style="font-style: italic;">BEL: 023-93925325</p>
+
+        <script>
+            
+            function date_time_appointment() {
+                var date = document.getElementById("date").value;
+                var time = document.getElementById("time").value;
+                console.log(date)
+                console.log(time)
+            }
+
+        </script>
+    </body>
+</html>
